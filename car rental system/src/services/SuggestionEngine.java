@@ -20,7 +20,6 @@ public class SuggestionEngine {
     
         List<Vehicle> vehicleOptions = new ArrayList<>();
     
-        // Define vehicles for different loyalty tiers
         if (client.getLoyaltyTier() == LoyaltyTier.GOLD) {
             vehicleOptions.add(new Car("V002", "Tesla", "Model S", "ECO123", "Electric", 5));
             vehicleOptions.add(new Car("V005", "Audi", "A8", "AUD456", "Hybrid", 4));
@@ -38,13 +37,11 @@ public class SuggestionEngine {
             vehicleOptions.add(new Motorcycle("M003", "Yamaha", "MT-07", "YAM789", 689, false));
         }
     
-        // Print available vehicles for debugging
         System.out.println("Available vehicles for suggestion:");
         for (Vehicle vehicle : vehicleOptions) {
             System.out.println(vehicle.getBrand() + " " + vehicle.getModel());
         }
     
-        // Randomly select a vehicle from the available options
         return vehicleOptions.get(random.nextInt(vehicleOptions.size()));
     }
 }
